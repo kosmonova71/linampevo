@@ -1,0 +1,19 @@
+{
+  "lin1": [
+    {
+      "genome_id": "gen1",
+      "score": 1.0,
+      "ts": 0.0
+    },
+    {
+      "genome_id": "gen2",
+      "score": 2.0,
+      "ts": 1.0
+    },
+    {
+      "genome_id": "gen3",
+      "score": 3.5,
+      "ts": 2.0
+    }
+  ]
+}

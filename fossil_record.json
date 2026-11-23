@@ -1,0 +1,5678 @@
+{
+  "generations": [
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "838d6fb9",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496725181252159,
+      "species_count": 3,
+      "timestamp": 1784801892.7090766
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "838d6fb9",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496725176719809,
+      "species_count": 3,
+      "timestamp": 1784801893.2105272
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "170535a6",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:feedback+spiral",
+          "duplicate:warp+curl"
+        ]
+      },
+      "best_fitness": 0.14968941966837263,
+      "species_count": 2,
+      "timestamp": 1784803138.4896948
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "35fba31b",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967029692442568,
+      "species_count": 3,
+      "timestamp": 1784803138.9924333
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "a18dd786",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "invent:field_type=fbm"
+        ]
+      },
+      "best_fitness": 0.14967564744878728,
+      "species_count": 3,
+      "timestamp": 1784803139.4913406
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "170535a6",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:feedback+spiral"
+        ]
+      },
+      "best_fitness": 0.1499661804103858,
+      "species_count": 3,
+      "timestamp": 1784803140.01331
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "d21e590c",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1498407256277625,
+      "species_count": 3,
+      "timestamp": 1784804652.3919575
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "de35b8d8",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967294711547655,
+      "species_count": 3,
+      "timestamp": 1784804652.9372547
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "neon_edge"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "4234e1fe",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:field_type=reaction_diffusion",
+          "split:glow->neon_edge"
+        ]
+      },
+      "best_fitness": 0.14967404128047382,
+      "species_count": 3,
+      "timestamp": 1784804653.4560294
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "neon_edge"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "4234e1fe",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:field_type=reaction_diffusion",
+          "split:glow->neon_edge"
+        ]
+      },
+      "best_fitness": 0.1499775572808302,
+      "species_count": 3,
+      "timestamp": 1784804654.1324258
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "9c533f8b",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496859580262474,
+      "species_count": 4,
+      "timestamp": 1784808301.3312879
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "9c533f8b",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967302531418775,
+      "species_count": 3,
+      "timestamp": 1784808301.828121
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "3cf66b08",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14962653568461345,
+      "species_count": 2,
+      "timestamp": 1784808302.3268642
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "3cf66b08",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496265356847945,
+      "species_count": 2,
+      "timestamp": 1784808302.8322022
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "8b047da0",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496724971571825,
+      "species_count": 3,
+      "timestamp": 1784811236.6562262
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "d3364ef5",
+        "_generation": 0,
+        "_fitness": 0.171875,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:feedback_mode=mirror",
+          "invent:feedback_mode=spiral"
+        ]
+      },
+      "best_fitness": 0.15020184230333536,
+      "species_count": 3,
+      "timestamp": 1784811237.6497934
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "nonlinear_trails"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "d3364ef5",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:feedback_mode=mirror",
+          "invent:feedback_mode=spiral",
+          "split:glow->nonlinear_trails",
+          "replace:palette=plasma"
+        ]
+      },
+      "best_fitness": 0.15028781501606572,
+      "species_count": 2,
+      "timestamp": 1784811240.0956771
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "audio_topology"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "d3364ef5",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:feedback_mode=mirror",
+          "invent:feedback_mode=spiral",
+          "split:glow->polar_galaxy",
+          "split:polar_galaxy->bloom",
+          "split:bloom->audio_topology"
+        ]
+      },
+      "best_fitness": 0.15076370640718428,
+      "species_count": 1,
+      "timestamp": 1784811244.0072324
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "nonlinear_trails"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "d3364ef5",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:feedback_mode=mirror",
+          "invent:feedback_mode=spiral",
+          "split:glow->polar_galaxy",
+          "split:polar_galaxy->bloom",
+          "split:bloom->audio_topology",
+          "split:audio_topology->nonlinear_trails"
+        ]
+      },
+      "best_fitness": 0.1507636706963947,
+      "species_count": 1,
+      "timestamp": 1784811247.073688
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.3,
+          "arms": 3.0,
+          "twist_rate": 0.5
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "75236227",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=plasma",
+          "replace:warp=vortex"
+        ]
+      },
+      "best_fitness": 0.14966589313318893,
+      "species_count": 4,
+      "timestamp": 1784812081.0786948
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14964600467079373,
+      "species_count": 4,
+      "timestamp": 1784812081.691292
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14964691568530217,
+      "species_count": 4,
+      "timestamp": 1784812082.4074447
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14966260291534245,
+      "species_count": 4,
+      "timestamp": 1784812083.223451
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496626029899713,
+      "species_count": 4,
+      "timestamp": 1784812083.7225845
+    },
+    {
+      "generation": 180,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14986362877850218,
+      "species_count": 4,
+      "timestamp": 1784812084.2447011
+    },
+    {
+      "generation": 210,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "polar_galaxy"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->polar_galaxy",
+          "duplicate:palette+cosine"
+        ]
+      },
+      "best_fitness": 0.14968157907369922,
+      "species_count": 4,
+      "timestamp": 1784812086.0112944
+    },
+    {
+      "generation": 240,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.14286422729492188,
+        "_parent_id": null,
+        "_mutations": [
+          "invent:warp=curl",
+          "replace:field_type=sdf",
+          "replace:palette=plasma"
+        ]
+      },
+      "best_fitness": 0.15028913705262922,
+      "species_count": 1,
+      "timestamp": 1784812088.9762852
+    },
+    {
+      "generation": 270,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5a63c014",
+        "_generation": 0,
+        "_fitness": 0.14285725355148315,
+        "_parent_id": null,
+        "_mutations": [
+          "invent:warp=curl",
+          "replace:field_type=sdf",
+          "replace:palette=plasma",
+          "replace:field_type=voronoi",
+          "duplicate:palette+plasma"
+        ]
+      },
+      "best_fitness": 0.15055894266245415,
+      "species_count": 1,
+      "timestamp": 1784812091.700735
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "189708fd",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl"
+        ]
+      },
+      "best_fitness": 0.1496731384276481,
+      "species_count": 4,
+      "timestamp": 1784843492.4009979
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "beef102e",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967251764642067,
+      "species_count": 3,
+      "timestamp": 1784843493.2972784
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "189708fd",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl"
+        ]
+      },
+      "best_fitness": 0.14967294924330077,
+      "species_count": 3,
+      "timestamp": 1784843494.1339798
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "189708fd",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl"
+        ]
+      },
+      "best_fitness": 0.15028064763751847,
+      "species_count": 4,
+      "timestamp": 1784843495.1334617
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "189708fd",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl"
+        ]
+      },
+      "best_fitness": 0.15028065520385223,
+      "species_count": 5,
+      "timestamp": 1784843496.569332
+    },
+    {
+      "generation": 180,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "plasma",
+        "feedback_mode": "kaleido",
+        "post": [
+          "cells",
+          "chromatic_aberration"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "32ca2cea",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=plasma",
+          "invent:warp=twist",
+          "split:glow->cells",
+          "duplicate:post+chromatic_aberration",
+          "replace:warp=twist",
+          "duplicate:feedback+spiral",
+          "invent:feedback_mode=kaleido"
+        ]
+      },
+      "best_fitness": 0.15037724998475704,
+      "species_count": 5,
+      "timestamp": 1784843497.465538
+    },
+    {
+      "generation": 210,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "plasma",
+        "feedback_mode": "kaleido",
+        "post": [
+          "cells",
+          "chromatic_aberration"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "32ca2cea",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=plasma",
+          "invent:warp=twist",
+          "split:glow->cells",
+          "duplicate:post+chromatic_aberration",
+          "replace:warp=twist",
+          "duplicate:feedback+spiral",
+          "invent:feedback_mode=kaleido"
+        ]
+      },
+      "best_fitness": 0.15037724998579052,
+      "species_count": 5,
+      "timestamp": 1784843498.1821575
+    },
+    {
+      "generation": 240,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "vortex",
+        "palette": "plasma",
+        "feedback_mode": "kaleido",
+        "post": [
+          "cells",
+          "chromatic_aberration",
+          "polar_galaxy"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.3,
+          "arms": 3.0,
+          "twist_rate": 0.5
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "32ca2cea",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=plasma",
+          "invent:warp=twist",
+          "split:glow->cells",
+          "duplicate:post+chromatic_aberration",
+          "replace:warp=twist",
+          "duplicate:feedback+spiral",
+          "invent:feedback_mode=kaleido",
+          "invent:warp=vortex,post+..."
+        ]
+      },
+      "best_fitness": 0.1503772494775907,
+      "species_count": 5,
+      "timestamp": 1784843499.036844
+    },
+    {
+      "generation": 270,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "vortex",
+        "palette": "plasma",
+        "feedback_mode": "kaleido",
+        "post": [
+          "cells",
+          "chromatic_aberration",
+          "polar_galaxy"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.3,
+          "arms": 3.0,
+          "twist_rate": 0.5
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "32ca2cea",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=plasma",
+          "invent:warp=twist",
+          "split:glow->cells",
+          "duplicate:post+chromatic_aberration",
+          "replace:warp=twist",
+          "duplicate:feedback+spiral",
+          "invent:feedback_mode=kaleido",
+          "invent:warp=vortex,post+..."
+        ]
+      },
+      "best_fitness": 0.1503772494775951,
+      "species_count": 5,
+      "timestamp": 1784843499.7532964
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "twist",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "89c9480c",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:warp=twist"
+        ]
+      },
+      "best_fitness": 0.14967307497881052,
+      "species_count": 4,
+      "timestamp": 1784843783.4807754
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f306fa00",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:palette+cosine"
+        ]
+      },
+      "best_fitness": 0.1496729550385159,
+      "species_count": 4,
+      "timestamp": 1784843784.3444116
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "96ff6f72",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=plasma",
+          "replace:palette=cosine"
+        ]
+      },
+      "best_fitness": 0.1498656215093425,
+      "species_count": 4,
+      "timestamp": 1784843785.5350215
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "spectral",
+        "feedback_mode": "kaleido",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "wavelength_shift": 0.0,
+          "dispersion": 0.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f306fa00",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:palette+cosine",
+          "replace:field_type=reaction_diffusion",
+          "invent:palette=spectral",
+          "replace:feedback_mode=kaleido"
+        ]
+      },
+      "best_fitness": 0.14997770512557004,
+      "species_count": 3,
+      "timestamp": 1784843788.7597604
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "spectral",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "wavelength_shift": 0.0,
+          "dispersion": 0.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f306fa00",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:palette+cosine",
+          "replace:palette=spectral"
+        ]
+      },
+      "best_fitness": 0.15028062429662226,
+      "species_count": 3,
+      "timestamp": 1784843792.503778
+    },
+    {
+      "generation": 180,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "kaleido",
+        "post": [
+          "nonlinear_trails"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "8bd5254d",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->nonlinear_trails",
+          "replace:feedback_mode=kaleido"
+        ]
+      },
+      "best_fitness": 0.15089536253684974,
+      "species_count": 3,
+      "timestamp": 1784843796.2188709
+    },
+    {
+      "generation": 210,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "kaleido",
+        "post": [
+          "nonlinear_trails"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "8bd5254d",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->nonlinear_trails",
+          "replace:feedback_mode=kaleido"
+        ]
+      },
+      "best_fitness": 0.15089533780753348,
+      "species_count": 3,
+      "timestamp": 1784843802.0500102
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "49670e61",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1497432822879162,
+      "species_count": 4,
+      "timestamp": 1784855374.13285
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "929817e3",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967308021266323,
+      "species_count": 2,
+      "timestamp": 1784855374.9279404
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "929817e3",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14997768202577985,
+      "species_count": 3,
+      "timestamp": 1784855375.936977
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "cosine",
+        "feedback_mode": "kaleido",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "929817e3",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "invent:feedback_mode=kaleido"
+        ]
+      },
+      "best_fitness": 0.15058371504889181,
+      "species_count": 3,
+      "timestamp": 1784855381.731069
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "nonlinear_trails"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5be5d564",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->nonlinear_trails"
+        ]
+      },
+      "best_fitness": 0.14985042605772048,
+      "species_count": 4,
+      "timestamp": 1784881263.7061899
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "nonlinear_trails"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "5be5d564",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->nonlinear_trails"
+        ]
+      },
+      "best_fitness": 0.14967251765157802,
+      "species_count": 3,
+      "timestamp": 1784881264.3888752
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "cosine",
+        "feedback_mode": "kaleido",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "fb02d80d",
+        "_generation": 0,
+        "_fitness": 0.171875,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:feedback_mode=kaleido"
+        ]
+      },
+      "best_fitness": 0.15043629489919022,
+      "species_count": 3,
+      "timestamp": 1784881265.7397335
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "cosine",
+        "feedback_mode": "zoom",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "fb02d80d",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "invent:feedback_mode=zoom"
+        ]
+      },
+      "best_fitness": 0.1505925149879696,
+      "species_count": 1,
+      "timestamp": 1784881267.6768432
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "mandelbrot",
+        "warp": "twist",
+        "palette": "cosine",
+        "feedback_mode": "zoom",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "fb02d80d",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "invent:feedback_mode=zoom",
+          "invent:palette=cosine"
+        ]
+      },
+      "best_fitness": 0.15118920472321448,
+      "species_count": 1,
+      "timestamp": 1784881272.995643
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi"
+        ]
+      },
+      "best_fitness": 0.1496732024227645,
+      "species_count": 3,
+      "timestamp": 1784926819.1844347
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "539a6f2a",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:palette+cosine"
+        ]
+      },
+      "best_fitness": 0.14967251785055,
+      "species_count": 3,
+      "timestamp": 1784926819.8243866
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "twist",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "replace:warp=twist"
+        ]
+      },
+      "best_fitness": 0.14967317911289024,
+      "species_count": 3,
+      "timestamp": 1784926820.4532332
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi"
+        ]
+      },
+      "best_fitness": 0.14967296733766275,
+      "species_count": 3,
+      "timestamp": 1784926821.2531178
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells"
+        ]
+      },
+      "best_fitness": 0.1496821816839828,
+      "species_count": 3,
+      "timestamp": 1784926822.104627
+    },
+    {
+      "generation": 180,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells"
+        ]
+      },
+      "best_fitness": 0.14998515359639603,
+      "species_count": 3,
+      "timestamp": 1784926822.972781
+    },
+    {
+      "generation": 210,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells"
+        ]
+      },
+      "best_fitness": 0.15028857960193392,
+      "species_count": 3,
+      "timestamp": 1784926823.7793257
+    },
+    {
+      "generation": 240,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "vortex",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells",
+          "depth_cloud"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud"
+        ]
+      },
+      "best_fitness": 0.15028858170734943,
+      "species_count": 3,
+      "timestamp": 1784926824.7215014
+    },
+    {
+      "generation": 270,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells",
+          "depth_cloud"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud",
+          "duplicate:warp+vortex",
+          "replace:palette=plasma"
+        ]
+      },
+      "best_fitness": 0.15059331440195836,
+      "species_count": 3,
+      "timestamp": 1784926825.6435797
+    },
+    {
+      "generation": 300,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells",
+          "depth_cloud"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud",
+          "duplicate:warp+vortex",
+          "replace:palette=plasma"
+        ]
+      },
+      "best_fitness": 0.15059333178305329,
+      "species_count": 3,
+      "timestamp": 1784926826.313846
+    },
+    {
+      "generation": 330,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud",
+          "duplicate:warp+vortex",
+          "replace:palette=plasma",
+          "fuse:depth_cloud+cells=depth_cloud"
+        ]
+      },
+      "best_fitness": 0.15059334609686909,
+      "species_count": 3,
+      "timestamp": 1784926827.0461838
+    },
+    {
+      "generation": 360,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud",
+          "duplicate:warp+vortex",
+          "replace:palette=plasma",
+          "fuse:depth_cloud+cells=depth_cloud"
+        ]
+      },
+      "best_fitness": 0.150593356847622,
+      "species_count": 3,
+      "timestamp": 1784926827.7270448
+    },
+    {
+      "generation": 390,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud",
+          "duplicate:warp+vortex",
+          "replace:palette=plasma",
+          "fuse:depth_cloud+cells=depth_cloud"
+        ]
+      },
+      "best_fitness": 0.15059336462956197,
+      "species_count": 3,
+      "timestamp": 1784926828.3271272
+    },
+    {
+      "generation": 420,
+      "best_genome": {
+        "field": "mandelbrot",
+        "warp": "twist",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "78abfd4a",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->bloom"
+        ]
+      },
+      "best_fitness": 0.15066637718291073,
+      "species_count": 3,
+      "timestamp": 1784926828.9458992
+    },
+    {
+      "generation": 450,
+      "best_genome": {
+        "field": "mandelbrot",
+        "warp": "twist",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "78abfd4a",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->bloom",
+          "duplicate:palette+cosine"
+        ]
+      },
+      "best_fitness": 0.1511890565344962,
+      "species_count": 3,
+      "timestamp": 1784926829.7335665
+    },
+    {
+      "generation": 480,
+      "best_genome": {
+        "field": "mandelbrot",
+        "warp": "twist",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "78abfd4a",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->bloom",
+          "duplicate:palette+cosine"
+        ]
+      },
+      "best_fitness": 0.15118854820981958,
+      "species_count": 3,
+      "timestamp": 1784926830.650802
+    },
+    {
+      "generation": 510,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "vortex",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "78abfd4a",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->bloom"
+        ]
+      },
+      "best_fitness": 0.1514923485206595,
+      "species_count": 5,
+      "timestamp": 1784926836.354845
+    },
+    {
+      "generation": 540,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "vortex",
+        "palette": "plasma",
+        "feedback_mode": "zoom",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud",
+          "duplicate:warp+vortex",
+          "replace:palette=plasma",
+          "fuse:depth_cloud+cells=depth_cloud",
+          "invent:feedback_mode=zoom"
+        ]
+      },
+      "best_fitness": 0.1515031583905429,
+      "species_count": 5,
+      "timestamp": 1784926839.9261901
+    },
+    {
+      "generation": 570,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "vortex",
+        "palette": "plasma",
+        "feedback_mode": "zoom",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "7ef792b9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "replace:field_type=voronoi",
+          "split:glow->cells",
+          "duplicate:post+depth_cloud",
+          "duplicate:warp+vortex",
+          "replace:palette=plasma",
+          "fuse:depth_cloud+cells=depth_cloud",
+          "invent:feedback_mode=zoom"
+        ]
+      },
+      "best_fitness": 0.15150352246943946,
+      "species_count": 5,
+      "timestamp": 1784926845.392563
+    },
+    {
+      "generation": 600,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "78abfd4a",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->bloom"
+        ]
+      },
+      "best_fitness": 0.1517957814200029,
+      "species_count": 5,
+      "timestamp": 1784926858.4357653
+    },
+    {
+      "generation": 630,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "78abfd4a",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->bloom"
+        ]
+      },
+      "best_fitness": 0.15179508232668337,
+      "species_count": 5,
+      "timestamp": 1784926859.3062792
+    },
+    {
+      "generation": 660,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "78abfd4a",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->bloom",
+          "duplicate:warp+vortex"
+        ]
+      },
+      "best_fitness": 0.15179426186823933,
+      "species_count": 5,
+      "timestamp": 1784926862.5645952
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "80e940c5",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14968232240510448,
+      "species_count": 4,
+      "timestamp": 1784928699.3889196
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "2ea84c41",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14964653065633815,
+      "species_count": 4,
+      "timestamp": 1784928700.1510828
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "695ca835",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496725178371536,
+      "species_count": 5,
+      "timestamp": 1784928700.8811717
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "a1dab7d9",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496202669787367,
+      "species_count": 4,
+      "timestamp": 1784928701.608694
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "chromatic_aberration"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "80e940c5",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->chromatic_aberration"
+        ]
+      },
+      "best_fitness": 0.14997552409501896,
+      "species_count": 4,
+      "timestamp": 1784928702.3510633
+    },
+    {
+      "generation": 180,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "chromatic_aberration"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "80e940c5",
+        "_generation": 0,
+        "_fitness": 0.143310546875,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->chromatic_aberration"
+        ]
+      },
+      "best_fitness": 0.15058375860729772,
+      "species_count": 2,
+      "timestamp": 1784928704.3705246
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "cbc82a8a",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967300384549428,
+      "species_count": 3,
+      "timestamp": 1785035562.1315215
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "48ca86d9",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.1496767244718906,
+      "species_count": 3,
+      "timestamp": 1785035562.9447982
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "48ca86d9",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14968119415543443,
+      "species_count": 3,
+      "timestamp": 1785035564.2498763
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "48ca86d9",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14968132697374856,
+      "species_count": 3,
+      "timestamp": 1785035566.4769382
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "feedback",
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f86e335e",
+        "_generation": 0,
+        "_fitness": 0.14285725355148315,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=spectral",
+          "invent:palette=plasma,post+...",
+          "fuse:glow+bloom=bloom",
+          "duplicate:feedback+spiral",
+          "split:glow->feedback",
+          "invent:field_type=fbm,post+...",
+          "replace:field_type=voronoi",
+          "split:distortion->cells"
+        ]
+      },
+      "best_fitness": 0.150324870430818,
+      "species_count": 2,
+      "timestamp": 1785035570.1428733
+    },
+    {
+      "generation": 180,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "feedback",
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f86e335e",
+        "_generation": 0,
+        "_fitness": 0.14285725355148315,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=spectral",
+          "invent:palette=plasma,post+...",
+          "fuse:glow+bloom=bloom",
+          "duplicate:feedback+spiral",
+          "split:glow->feedback",
+          "invent:field_type=fbm,post+...",
+          "replace:field_type=voronoi",
+          "split:distortion->cells"
+        ]
+      },
+      "best_fitness": 0.15062769177700117,
+      "species_count": 2,
+      "timestamp": 1785035584.9774032
+    },
+    {
+      "generation": 210,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "feedback",
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f86e335e",
+        "_generation": 0,
+        "_fitness": 0.14285725355148315,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=spectral",
+          "invent:palette=plasma,post+...",
+          "fuse:glow+bloom=bloom",
+          "duplicate:feedback+spiral",
+          "split:glow->feedback",
+          "invent:field_type=fbm,post+...",
+          "replace:field_type=voronoi",
+          "split:distortion->cells",
+          "replace:palette=cosine",
+          "duplicate:warp+curl"
+        ]
+      },
+      "best_fitness": 0.15062768783259817,
+      "species_count": 2,
+      "timestamp": 1785035627.0230076
+    },
+    {
+      "generation": 240,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "plasma",
+        "feedback_mode": "spiral",
+        "post": [
+          "nonlinear_trails"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "speed": 1.0,
+          "complexity": 1.0,
+          "saturation": 1.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f86e335e",
+        "_generation": 0,
+        "_fitness": 0.14285725355148315,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=spectral",
+          "invent:palette=plasma,post+...",
+          "fuse:glow+bloom=bloom",
+          "duplicate:feedback+spiral",
+          "split:glow->feedback",
+          "invent:field_type=fbm,post+...",
+          "replace:field_type=voronoi",
+          "replace:warp=twist",
+          "split:feedback->nonlinear_trails",
+          "duplicate:feedback+spiral",
+          "fuse:nonlinear_trails+distortion=nonlinear_trails"
+        ]
+      },
+      "best_fitness": 0.15086257792734203,
+      "species_count": 2,
+      "timestamp": 1785035639.5739605
+    },
+    {
+      "generation": 270,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "vortex",
+        "palette": "cosine",
+        "feedback_mode": "drift",
+        "post": [
+          "feedback",
+          "glow",
+          "depth_cloud"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "f86e335e",
+        "_generation": 0,
+        "_fitness": 0.14285725355148315,
+        "_parent_id": null,
+        "_mutations": [
+          "replace:palette=spectral",
+          "invent:palette=plasma,post+...",
+          "fuse:glow+bloom=bloom",
+          "duplicate:feedback+spiral",
+          "split:glow->feedback",
+          "invent:field_type=fbm,post+...",
+          "replace:field_type=voronoi",
+          "split:distortion->cells",
+          "replace:palette=cosine",
+          "duplicate:warp+curl",
+          "duplicate:palette+cosine",
+          "split:cells->glow",
+          "invent:feedback_mode=drift,post+..."
+        ]
+      },
+      "best_fitness": 0.15123383150535535,
+      "species_count": 2,
+      "timestamp": 1785035655.2577848
+    },
+    {
+      "generation": 30,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "634d29c9",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967250126014653,
+      "species_count": 3,
+      "timestamp": 1785053956.9378405
+    },
+    {
+      "generation": 60,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "glow"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "634d29c9",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": []
+      },
+      "best_fitness": 0.14967177197287262,
+      "species_count": 3,
+      "timestamp": 1785053957.5842903
+    },
+    {
+      "generation": 90,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "feedback"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "c76e9a1a",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->feedback"
+        ]
+      },
+      "best_fitness": 0.1499770622095137,
+      "species_count": 3,
+      "timestamp": 1785053958.3975718
+    },
+    {
+      "generation": 120,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "feedback"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "c76e9a1a",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->feedback"
+        ]
+      },
+      "best_fitness": 0.14996622035642113,
+      "species_count": 4,
+      "timestamp": 1785053959.1908684
+    },
+    {
+      "generation": 150,
+      "best_genome": {
+        "field": "fbm",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "feedback"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "c76e9a1a",
+        "_generation": 0,
+        "_fitness": 0.375,
+        "_parent_id": null,
+        "_mutations": [
+          "split:glow->feedback"
+        ]
+      },
+      "best_fitness": 0.1499849204658093,
+      "species_count": 5,
+      "timestamp": 1785053961.423549
+    },
+    {
+      "generation": 180,
+      "best_genome": {
+        "field": "voronoi",
+        "warp": "none",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "distortion"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "634d29c9",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "split:glow->distortion"
+        ]
+      },
+      "best_fitness": 0.15059320683984606,
+      "species_count": 2,
+      "timestamp": 1785053964.395056
+    },
+    {
+      "generation": 210,
+      "best_genome": {
+        "field": "reaction_diffusion",
+        "warp": "curl",
+        "palette": "cosine",
+        "feedback_mode": "spiral",
+        "post": [
+          "bloom"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "strength": 0.5,
+          "scale": 1.0,
+          "octaves": 4
+        },
+        "palette_params": {
+          "palette_id": 0,
+          "colour_shift": 0.0,
+          "shift_speed": 0.1
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "634d29c9",
+        "_generation": 0,
+        "_fitness": 0.146484375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:warp+curl",
+          "split:glow->distortion",
+          "split:distortion->bloom"
+        ]
+      },
+      "best_fitness": 0.15089535674596635,
+      "species_count": 2,
+      "timestamp": 1785053967.6443622
+    },
+    {
+      "generation": 240,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "vortex",
+        "palette": "spectral",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "wavelength_shift": 0.0,
+          "dispersion": 0.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "634d29c9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:feedback+spiral",
+          "split:glow->bloom",
+          "replace:palette=spectral",
+          "split:bloom->cells",
+          "replace:warp=twist"
+        ]
+      },
+      "best_fitness": 0.1513321723036248,
+      "species_count": 2,
+      "timestamp": 1785053973.0499039
+    },
+    {
+      "generation": 270,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "vortex",
+        "palette": "spectral",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "wavelength_shift": 0.0,
+          "dispersion": 0.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "634d29c9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:feedback+spiral",
+          "split:glow->bloom",
+          "replace:palette=spectral",
+          "split:bloom->cells",
+          "replace:warp=twist"
+        ]
+      },
+      "best_fitness": 0.15133185513613798,
+      "species_count": 3,
+      "timestamp": 1785053976.3669775
+    },
+    {
+      "generation": 300,
+      "best_genome": {
+        "field": "sdf",
+        "warp": "vortex",
+        "palette": "spectral",
+        "feedback_mode": "spiral",
+        "post": [
+          "cells"
+        ],
+        "field_params": {
+          "fractal_layers": 4,
+          "lacunarity": 2.0,
+          "gain": 0.5,
+          "domain_warp": 0.5,
+          "noise_scale": 3.0
+        },
+        "warp_params": {
+          "amount": 0.5,
+          "iterations": 2
+        },
+        "palette_params": {
+          "wavelength_shift": 0.0,
+          "dispersion": 0.0
+        },
+        "post_params": {
+          "bloom_threshold": 0.6,
+          "bloom_intensity": 0.5,
+          "bloom_radius": 1.0,
+          "feedback_mode": 0,
+          "feedback_speed": 1.0,
+          "feedback_amount": 0.5,
+          "distortion_amount": 0.5,
+          "distortion_mode": 1,
+          "glow_intensity": 0.5,
+          "glow_colour_shift": 0.5,
+          "chromatic_aberration_amount": 0.003,
+          "chromatic_aberration_direction": 0.0
+        },
+        "_lineage": "634d29c9",
+        "_generation": 0,
+        "_fitness": 0.142913818359375,
+        "_parent_id": null,
+        "_mutations": [
+          "duplicate:feedback+spiral",
+          "split:glow->bloom",
+          "replace:palette=spectral",
+          "split:bloom->cells",
+          "replace:warp=twist"
+        ]
+      },
+      "best_fitness": 0.15133197547423666,
+      "species_count": 2,
+      "timestamp": 1785053988.7313306
+    }
+  ],
+  "extinct_species": [],
+  "evolutionary_branches": [],
+  "major_innovations": [],
+  "environmental_history": [
+    {
+      "event": "cold",
+      "intensity": 0.6560385372225215,
+      "timestamp": 1784119651.9230936
+    },
+    {
+      "event": "fire",
+      "intensity": 0.3426791962966702,
+      "timestamp": 1784119711.3669033
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.45989156009637083,
+      "timestamp": 1784119741.469628
+    },
+    {
+      "event": "cold",
+      "intensity": 0.6598577824643024,
+      "timestamp": 1784124082.326363
+    },
+    {
+      "event": "fire",
+      "intensity": 0.3901999990813161,
+      "timestamp": 1784124094.9103374
+    },
+    {
+      "event": "fire",
+      "intensity": 0.3275643440013886,
+      "timestamp": 1784179179.667249
+    },
+    {
+      "event": "cold",
+      "intensity": 0.6900999645933055,
+      "timestamp": 1784179194.125998
+    },
+    {
+      "event": "cold",
+      "intensity": 0.4670281485095598,
+      "timestamp": 1784179855.9882236
+    },
+    {
+      "event": "fire",
+      "intensity": 0.8185576092113651,
+      "timestamp": 1784179872.2703235
+    },
+    {
+      "event": "cold",
+      "intensity": 0.30543362968982,
+      "timestamp": 1784180724.3924997
+    },
+    {
+      "event": "fire",
+      "intensity": 0.6724100488584686,
+      "timestamp": 1784180785.821882
+    },
+    {
+      "event": "resource_collapse",
+      "intensity": 0.3951400534637808,
+      "timestamp": 1784180813.2608767
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.8334549684429498,
+      "timestamp": 1784181108.8526633
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.4273593497512925,
+      "timestamp": 1784190748.4831536
+    },
+    {
+      "event": "resource_collapse",
+      "intensity": 0.9889252982108978,
+      "timestamp": 1784193354.810781
+    },
+    {
+      "event": "cold",
+      "intensity": 0.39610893369981387,
+      "timestamp": 1784193628.6629915
+    },
+    {
+      "event": "cold",
+      "intensity": 0.7340962066500846,
+      "timestamp": 1784197506.5335853
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.4572677160126663,
+      "timestamp": 1784197797.6675375
+    },
+    {
+      "event": "fire",
+      "intensity": 0.9436525939524036,
+      "timestamp": 1784198037.6317382
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.9862880528382081,
+      "timestamp": 1784198503.771595
+    },
+    {
+      "event": "cold",
+      "intensity": 0.5967873858169125,
+      "timestamp": 1784198774.637355
+    },
+    {
+      "event": "resource_collapse",
+      "intensity": 0.32296314822595734,
+      "timestamp": 1784198939.3819184
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.7300215564187,
+      "timestamp": 1784199263.767279
+    },
+    {
+      "event": "fire",
+      "intensity": 0.9342015922799505,
+      "timestamp": 1784199784.1968265
+    },
+    {
+      "event": "fire",
+      "intensity": 0.8203199088108077,
+      "timestamp": 1784208524.7873256
+    },
+    {
+      "event": "fire",
+      "intensity": 0.8841455177722197,
+      "timestamp": 1784208682.8631608
+    },
+    {
+      "event": "resource_collapse",
+      "intensity": 0.7853239954707467,
+      "timestamp": 1784212393.1973891
+    },
+    {
+      "event": "cold",
+      "intensity": 0.6080653843654316,
+      "timestamp": 1784212719.3518033
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.9180851579802989,
+      "timestamp": 1784213004.5225291
+    },
+    {
+      "event": "fire",
+      "intensity": 0.9784009059252976,
+      "timestamp": 1784213570.518874
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.5930888107695778,
+      "timestamp": 1784353564.61562
+    },
+    {
+      "event": "cold",
+      "intensity": 0.3276846678344699,
+      "timestamp": 1784458915.5602443
+    },
+    {
+      "event": "cold",
+      "intensity": 0.8662441485803487,
+      "timestamp": 1784459044.5960588
+    },
+    {
+      "event": "cold",
+      "intensity": 0.8012115149323031,
+      "timestamp": 1784459929.1170886
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.5331247404413164,
+      "timestamp": 1784460004.4892678
+    },
+    {
+      "event": "cold",
+      "intensity": 0.358913567332365,
+      "timestamp": 1784470630.8010306
+    },
+    {
+      "event": "cold",
+      "intensity": 0.8108575631360417,
+      "timestamp": 1784472269.181775
+    },
+    {
+      "event": "fire",
+      "intensity": 0.9306326657204249,
+      "timestamp": 1784472297.3718004
+    },
+    {
+      "event": "resource_collapse",
+      "intensity": 0.8064741239492228,
+      "timestamp": 1784500537.2803257
+    },
+    {
+      "event": "cold",
+      "intensity": 0.9035236219591396,
+      "timestamp": 1784501025.405054
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.4430884742577084,
+      "timestamp": 1784501632.3314266
+    },
+    {
+      "event": "fire",
+      "intensity": 0.8840693164965059,
+      "timestamp": 1784502938.8986185
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.6481120520714696,
+      "timestamp": 1784627003.975604
+    },
+    {
+      "event": "cold",
+      "intensity": 0.9107761295007801,
+      "timestamp": 1784627463.559513
+    },
+    {
+      "event": "fire",
+      "intensity": 0.9753753112832784,
+      "timestamp": 1784631793.083186
+    },
+    {
+      "event": "fire",
+      "intensity": 0.5233696370263401,
+      "timestamp": 1784632640.327024
+    },
+    {
+      "event": "fire",
+      "intensity": 0.8405668897252785,
+      "timestamp": 1784664985.669269
+    },
+    {
+      "event": "darkness",
+      "intensity": 0.5795661489164219,
+      "timestamp": 1784665090.1782677
+    },
+    {
+      "event": "resource_collapse",
+      "intensity": 0.7847411691541578,
+      "timestamp": 1784926828.94718
+    },
+    {
+      "event": "cold",
+      "intensity": 0.9736525766730033,
+      "timestamp": 1785035639.5753958
+    }
+  ]
+}

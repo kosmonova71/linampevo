@@ -1,26 +1,12 @@
-"""Persistent visual identity model.
+"""Identity package — persistent behavioural identity for the evolutionary renderer.
 
-Provides:
-  - Mood: dynamic control signal
-  - Goals: competing long-term objectives
-  - Preferences: learned likes/dislikes
-  - Memory: event storage with pattern recall
-  - VisualIdentity: core identity with identity genome, lineage, dreams
+Provides the :class:`~identity.state.IdentityGenome` (genetic blueprint for
+identity-level traits) and :class:`~identity.state.VisualIdentity` (the
+persistent identity that ages, accumulates preferences, and guides evolution).
 """
 
-from .state import IdentityGenome, SpeciesLineage, VisualIdentity
-from .mood import Mood
-from .goals import Goals
-from .preferences import Preferences
-from .memory import Memory, MemoryEvent
+from __future__ import annotations
 
-__all__ = [
-    "VisualIdentity",
-    "IdentityGenome",
-    "SpeciesLineage",
-    "Mood",
-    "Goals",
-    "Preferences",
-    "Memory",
-    "MemoryEvent",
-]
+from .state import IdentityGenome, VisualIdentity
+
+__all__ = ["IdentityGenome", "VisualIdentity"]

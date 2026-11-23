@@ -1,0 +1,47 @@
+[
+  {
+    "ts": 1785125078.7140882,
+    "species_id": "sp1",
+    "genome": {
+      "modules": [],
+      "params": {}
+    },
+    "score": 1.5,
+    "cause": "competition",
+    "lineage_id": "lin1",
+    "generation": 5,
+    "modules": [
+      "noise"
+    ]
+  },
+  {
+    "ts": 1785125078.7141593,
+    "species_id": "sp2",
+    "genome": {
+      "modules": [],
+      "params": {}
+    },
+    "score": 2.0,
+    "cause": "starvation",
+    "lineage_id": "lin1",
+    "generation": 10,
+    "modules": [
+      "warp"
+    ]
+  },
+  {
+    "ts": 1785125078.7142792,
+    "species_id": "sp3",
+    "genome": {
+      "modules": [],
+      "params": {}
+    },
+    "score": 0.5,
+    "cause": "predation",
+    "lineage_id": "lin2",
+    "generation": 3,
+    "modules": [
+      "fractal"
+    ]
+  }
+]

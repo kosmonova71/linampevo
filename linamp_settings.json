@@ -1,15 +1,15 @@
 {
   "auto_play_next": true,
   "shuffle_mode": false,
-  "repeat_mode": "none",
+  "repeat_mode": "all",
   "beat_aware_enabled": true,
   "beat_threshold": 0.1,
   "auto_download_covers": false,
-  "volume": 0.1275578394874799,
+  "volume": 0.20445235709485132,
   "position": 0.0,
   "window_size": [
-    1020,
-    739
+    1185,
+    755
   ],
   "window_position": [
     100,
@@ -27,9 +27,10 @@
     4.0,
     5.0
   ],
-  "last_played_track": "/home/shadowyfigure/Videos/6 Ultimate NRG Megamix.mp3",
-  "last_played_position": 389.12394,
+  "last_played_track": "/home/shadowyfigure/Videos/DJ tiesto - forbidden paradise deep trance mix.mp3",
+  "last_played_position": 112.235235,
   "show_cover_art": true,
   "cover_art_size": 650,
-  "cover_art_shape": "square"
+  "cover_art_shape": "square",
+  "milkdrop_auto_switch": true
 }

@@ -1,88 +1,130 @@
+"""Field — 2D energy grid for the physics ecosystem."""
+
 from __future__ import annotations
 
-from dataclasses import dataclass
 
-from typing import List
-
-
-def _gaussian_blur_approx(x: List[List[float]]) -> List[List[float]]:
-    """Cheap diffusion/blur substitute.
-
-    Uses separable 3-tap kernel repeated once.
-    Keeps runtime low (Stage 6 MVP).
-    """
-    h = len(x)
-    if h == 0:
-        return x
-    w = len(x[0]) if h else 0
-    if w == 0:
-        return x
-
-    k0, k1, k2 = 0.25, 0.5, 0.25
-
-    # Horizontal blur
-    hx = [[0.0 for _ in range(w)] for _ in range(h)]
-    for y in range(h):
-        for xi in range(w):
-            xl = (xi - 1) % w
-            xr = (xi + 1) % w
-            hx[y][xi] = k0 * x[y][xl] + k1 * x[y][xi] + k2 * x[y][xr]
-
-    # Vertical blur
-    out = [[0.0 for _ in range(w)] for _ in range(h)]
-    for yi in range(h):
-        for xi in range(w):
-            yu = (yi - 1) % h
-            yd = (yi + 1) % h
-            out[yi][xi] = k0 * hx[yu][xi] + k1 * hx[yi][xi] + k2 * hx[yd][xi]
-
-    return out
-
-
-
-@dataclass
 class Field:
-    width: int
-    height: int
-    energy: List[List[float]]
+    """A 2D grid representing spatially-distributed energy.
 
-    def __init__(self, width: int, height: int):
+    The energy field is the primary resource that entities interact
+    with: they draw energy from it to survive and reproduce.  Audio
+    input injects bursts of energy at random positions, while the
+    ``diffuse`` method spreads energy across neighbouring cells each
+    step.
+
+    The grid is stored in two ping-pong buffers (``_grid_a`` /
+    ``_grid_b``) so that ``diffuse`` can swap buffers instead of
+    allocating a fresh grid every step.  ``energy`` always points to
+    the *active* (front) buffer.
+    """
+
+    def __init__(self, width: int, height: int) -> None:
         self.width = int(width)
         self.height = int(height)
-        self.energy = [[0.0 for _ in range(self.width)] for _ in range(self.height)]
 
+        # Base energy grid — seeded with a small positive value so that
+        # entities always have something to draw from.
+        self._grid_a: list[list[float]] = [
+            [1.0 for _ in range(self.width)] for _ in range(self.height)
+        ]
+        self._grid_b: list[list[float]] = [
+            [0.0 for _ in range(self.width)] for _ in range(self.height)
+        ]
+        # ``energy`` is a reference to whichever buffer is currently
+        # active (front).  After ``diffuse`` swaps buffers this is
+        # updated so external holders (e.g. WorldState) see the new
+        # grid.
+        self.energy: list[list[float]] = self._grid_a
 
-    def diffuse(self, amount: float = 0.35) -> None:
-        """Diffuse energy (blur + blend)."""
-        amount = float(amount)
-        amount = max(0.0, min(1.0, amount))
-        blurred = _gaussian_blur_approx(self.energy)
-        # blend old + blurred
-        for y in range(self.height):
-            row = self.energy[y]
-            b_row = blurred[y]
-            for x in range(self.width):
-                row[x] = (1.0 - amount) * row[x] + amount * b_row[x]
-
-
+    # ------------------------------------------------------------------
+    # public API
+    # ------------------------------------------------------------------
     def inject(self, x: int, y: int, amount: float) -> None:
-        """Inject energy at integer cell coordinates."""
-        xi = int(x) % self.width
-        yi = int(y) % self.height
-        self.energy[yi][xi] = float(self.energy[yi][xi] + float(amount))
+        """Add *amount* of energy at grid position ``(x, y)``.
 
+        Coordinates are clamped to valid grid bounds.  Energy is
+        clamped to a minimum of 0 so the field never goes negative.
+        """
+        if not (0 <= y < self.height and 0 <= x < self.width):
+            return
+        self.energy[y][x] = max(0.0, self.energy[y][x] + float(amount))
 
-    def summary(self) -> dict[str, float]:
-        total = 0.0
-        maxv = 0.0
-        count = 0
+    def withdraw(self, x: int, y: int, amount: float) -> None:
+        """Remove *amount* of energy from cell ``(x, y)``.
+
+        This models entities consuming local field energy.  The cell
+        is clamped to a minimum of 0.  Coordinates are bounds-checked
+        and silently ignored if out of range.
+        """
+        if not (0 <= y < self.height and 0 <= x < self.width):
+            return
+        self.energy[y][x] = max(0.0, self.energy[y][x] - float(amount))
+
+    def sample(self, x: int, y: int) -> float:
+        """Return the energy at cell ``(x, y)``, or 0.0 if out of bounds."""
+        if 0 <= y < self.height and 0 <= x < self.width:
+            return float(self.energy[y][x])
+        return 0.0
+
+    def diffuse(self, amount: float = 0.25) -> None:
+        """Apply one Jacobi diffusion step to the energy grid.
+
+        Each cell is blended towards the average of itself and its four
+        von-Neumann neighbours.  ``amount`` controls the blend factor:
+        higher values spread energy more aggressively per step.
+
+        Uses a ping-pong buffer swap to avoid per-step allocation.
+        """
+        amount = max(0.0, min(1.0, float(amount)))
+        if amount <= 0.0:
+            return
+
+        w = self.width
+        h = self.height
+        if w <= 0 or h <= 0:
+            return
+
+        src = self.energy
+        # Pick the buffer that is *not* currently active.
+        dst = self._grid_b if self.energy is self._grid_a else self._grid_a
+
+        for y in range(h):
+            src_row = src[y]
+            dst_row = dst[y]
+            for x in range(w):
+                total = src_row[x]
+                count = 1
+                if x > 0:
+                    total += src[y][x - 1]
+                    count += 1
+                if x < w - 1:
+                    total += src[y][x + 1]
+                    count += 1
+                if y > 0:
+                    total += src[y - 1][x]
+                    count += 1
+                if y < h - 1:
+                    total += src[y + 1][x]
+                    count += 1
+                dst_row[x] = src_row[x] + amount * (total / count - src_row[x])
+
+        # Swap: the destination buffer becomes the new front buffer.
+        self.energy = dst
+
+    # ------------------------------------------------------------------
+    # convenience
+    # ------------------------------------------------------------------
+    def total_energy(self) -> float:
+        """Return the sum of all cells in the grid."""
+        return sum(sum(row) for row in self.energy)
+
+    def mean_energy(self) -> float:
+        """Return the mean energy per cell."""
+        count = self.width * self.height
+        return self.total_energy() / count if count else 0.0
+
+    def clear(self) -> None:
+        """Reset every cell in the active buffer to zero."""
         for row in self.energy:
-            for v in row:
-                total += float(v)
-                if float(v) > maxv:
-                    maxv = float(v)
-                count += 1
-        mean = total / float(count) if count else 0.0
-        return {"energy_mean": float(mean), "energy_max": float(maxv)}
-
-
+            for i in range(len(row)):
+                row[i] = 0.0
