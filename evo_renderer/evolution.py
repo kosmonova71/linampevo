@@ -1,539 +1,540 @@
+"""
+ASCEND V9 - Autonomous System Hooks (Evolution)
+
+Evolution engine for autonomous shader generation and optimization.
+
+Features:
+- NSGA-II multi-objective optimization
+- Simulated Binary Crossover (SBX)
+- Polynomial mutation
+- Fitness sharing for diversity maintenance
+- Adaptive mutation rates
+- Elite preservation with crowding distance
+"""
+
 from __future__ import annotations
 
-import os
+import math
 import random
-import time
+from collections.abc import Callable
+from dataclasses import dataclass, field
 from typing import Any
 
+from engine.ir.ssa import IRBlock
 
-from .mutation_brain import MutationBrain
-from .evolution_memory import EvolutionMemory, MutationResult
 
-from brain.structure_agent import StructureAgent
-from brain.motion_agent import MotionAgent
-from brain.colour_agent import ColourAgent
-from brain.guardian_agent import GuardianAgent
+@dataclass
+class Genome:
+    """Genome representing shader parameters."""
 
-from network.species_exchange import SpeciesExchange
+    genes: dict[str, float]
+    fitness: float = 0.0
+    objectives: dict[str, float] = field(default_factory=dict)
+    rank: int = 0
+    crowding_distance: float = 0.0
+    lineage: str = field(default_factory=lambda: f"gen_{random.randint(1000, 9999)}")
+    generation: int = 0
+    parent_ids: tuple[str, str] | None = None
 
-from identity.engine import IdentityEngine
+    def mutate(self, rate: float = 0.1, eta: float = 20.0) -> Genome:
+        """Mutate genome with polynomial mutation.
 
+        Args:
+            rate: Mutation rate (0-1) per gene
+            eta: Distribution index for polynomial mutation (higher = smaller mutations)
+
+        Returns:
+            New mutated genome
+        """
+        new_genes = self.genes.copy()
+        for key in new_genes:
+            if random.random() < rate:
+                # Polynomial mutation
+                u = random.random()
+                if u < 0.5:
+                    delta = (2.0 * u) ** (1.0 / (eta + 1.0)) - 1.0
+                else:
+                    delta = 1.0 - (2.0 * (1.0 - u)) ** (1.0 / (eta + 1.0))
+                new_genes[key] = max(0.0, min(1.0, new_genes[key] + delta))
+
+        return Genome(
+            new_genes,
+            0.0,
+            lineage=f"{self.lineage}_mut",
+            generation=self.generation + 1,
+            parent_ids=(self.lineage, self.lineage)
+        )
+
+    def crossover(self, other: Genome, rate: float = 0.9, eta: float = 20.0) -> Genome:
+        """Crossover with another genome using SBX.
+
+        Args:
+            other: Other genome to crossover with
+            rate: Crossover probability
+            eta: Distribution index for SBX (higher = more similar to parents)
+
+        Returns:
+            New child genome
+        """
+        new_genes = {}
+        for key in self.genes:
+            if key in other.genes and random.random() < rate:
+                # Simulated Binary Crossover (SBX)
+                x1 = self.genes[key]
+                x2 = other.genes[key]
+                u = random.random()
+                if u <= 0.5:
+                    beta = (2.0 * u) ** (1.0 / (eta + 1.0))
+                else:
+                    beta = (1.0 / (2.0 * (1.0 - u))) ** (1.0 / (eta + 1.0))
+                child_val = 0.5 * ((1.0 + beta) * x1 + (1.0 - beta) * x2)
+                new_genes[key] = max(0.0, min(1.0, child_val))
+            elif key in other.genes:
+                # Uniform crossover
+                new_genes[key] = self.genes[key] if random.random() < 0.5 else other.genes[key]
+            else:
+                new_genes[key] = self.genes[key]
+
+        return Genome(
+            new_genes,
+            0.0,
+            lineage=f"{self.lineage}x{other.lineage}",
+            generation=max(self.generation, other.generation) + 1,
+            parent_ids=(self.lineage, other.lineage)
+        )
+
+    def clone(self) -> Genome:
+        """Create a copy of this genome."""
+        return Genome(
+            self.genes.copy(),
+            self.fitness,
+            self.objectives.copy(),
+            self.rank,
+            self.crowding_distance,
+            self.lineage,
+            self.generation,
+            self.parent_ids
+        )
+
+    def distance(self, other: Genome) -> float:
+        """Calculate normalized Euclidean distance to another genome."""
+        common_keys = set(self.genes.keys()) & set(other.genes.keys())
+        if not common_keys:
+            return 1.0
+        total = sum((self.genes[k] - other.genes[k]) ** 2 for k in common_keys)
+        return math.sqrt(total / len(common_keys))
+
+    def params(self) -> dict[str, float]:
+        """Get genome parameters."""
+        return self.genes.copy()
 
 
 class EvolutionEngine:
-    """Stage 5 neural evolution layer + Stage 12 identity system.
+    """Evolution engine for autonomous shader optimization using NSGA-II.
 
-    - Uses MutationBrain to choose mutation strategy based on audio context.
-    - Evaluates fitness (proxy) before/after mutation.
-    - Records MutationResult and rewards brain.
-    - In silence (dream mode), stores champions without blocking visuals.
-    - Identity engine provides persistent mood, goals, memory, lineage, dreams.
+    Uses multi-objective genetic algorithms to evolve shader parameters.
     """
 
     def __init__(
         self,
-        renderer,
-        interval_secs: float = 15.0,
-        population_size: int = 3,
+        population_size: int = 50,
+        crossover_rate: float = 0.9,
+        crossover_eta: float = 20.0,
+        mutation_rate: float = 0.1,
+        mutation_eta: float = 20.0,
+        elite_fraction: float = 0.1,
+        fitness_sharing_sigma: float = 0.15,
+        fitness_sharing_alpha: float = 1.0,
+        min_mutation_rate: float = 0.05,
+        max_mutation_rate: float = 0.3,
+        diversity_target: float = 0.3,
     ):
-        self.renderer = renderer
-        self.timer = 0.0
-        self.interval_secs = float(interval_secs)
+        """Initialize evolution engine.
 
-        # Stage 8 (Option 1): novelty via concept archaeology.
-        from creativity.archive import ConceptArchaeology
-        from .fitness import Fitness
-
-        concept_db = os.path.join(os.path.dirname(__file__), "mutations.db")
-        concept_archive = ConceptArchaeology(db_path=concept_db)
-        self.fitness = Fitness(concept_archive=concept_archive)
-
-        self.brain = MutationBrain()  # kept for backwards compatibility
-        self.memory = EvolutionMemory()
-
-        # Stage 7: multi-agent hive (structure/motion/colour) + guardian.
-        self.structure_agent = StructureAgent()
-        self.motion_agent = MotionAgent()
-        self.colour_agent = ColourAgent()
-        self.guardian = GuardianAgent(min_score=0.0, min_delta=0.0)
-
-        # Stage 9: collective evolution network (file-based exchange).
-        try:
-            self.species_exchange = SpeciesExchange(
-                migration_interval_secs=max(5.0, self.interval_secs * 2.0)
-            )
-        except Exception:
-            self.species_exchange = None
-
-        # Stage 11: autonomous visual researcher
-        try:
-            from research.researcher import Researcher
-
-            self.researcher = Researcher(renderer=self.renderer, interval_secs=self.interval_secs * 1.5)
-        except Exception:
-            self.researcher = None
-
-        self.population_size = int(max(1, population_size))
-
-        # Dream mode
-        self._silent_accum = 0.0
-        self.silence_threshold = 0.08  # average of bass/mid/treble
-        self.silence_hold_secs = 5.0
-        self.dream_evolutions_per_tick = 2
-
-        # Stage 12: persistent identity system
-        try:
-            self.identity = IdentityEngine(
-                renderer=self.renderer,
-                state_path=os.path.join(os.path.dirname(__file__), "..", "identity", "identity_state.json"),
-            )
-        except Exception:
-            self.identity = None
-
-        self._was_silent = False
-
-        # internal frame counter for fitness proxy
-        self._frame_time = time.time()
-
-    def update(self, dt: float) -> list[dict[str, Any]]:
-        audio = self.renderer.last_audio_state
-        if audio is None:
-            return []
-
-        # Silence detection
-        avg_energy = (float(getattr(audio, "bass", 0.0)) + float(getattr(audio, "mid", 0.0)) + float(getattr(audio, "treble", 0.0))) / 3.0
-        if avg_energy < self.silence_threshold:
-            self._silent_accum += float(dt)
-        else:
-            self._silent_accum = 0.0
-
-        is_dream = self._silent_accum >= self.silence_hold_secs
-        just_woke = self._was_silent and not is_dream
-        self._was_silent = is_dream
-
-        # Stage 12: tick identity engine
-        dreams_applied: list[dict[str, Any]] = []
-        if self.identity is not None:
-            try:
-                self.identity.update(dt, audio=audio)
-            except Exception:
-                pass
-            if just_woke:
-                try:
-                    dreams = self.identity.consume_dreams()
-                    dreams_applied = self._apply_dreams(dreams)
-                except Exception:
-                    pass
-
-        # Evolve at regular cadence; during dream we do more steps.
-        self.timer += float(dt)
-        if self.timer <= self.interval_secs and not is_dream:
-            return dreams_applied
-
-        # In dream, allow periodic evolutions even if interval hasn't hit
-        if is_dream and self.timer < self.interval_secs:
-            # still evolve, but capped
-            if random.random() < 0.3:
-                self._evolve_once(audio=audio, dream=True)
-            return dreams_applied
-
-        # Otherwise normal interval evolution (or dream after interval)
-        self.timer = 0.0
-        if is_dream:
-            for _ in range(self.dream_evolutions_per_tick):
-                self._evolve_once(audio=audio, dream=True)
-        else:
-            self._evolve_once(audio=audio, dream=False)
-
-        # Stage 9: periodically receive/migrate and attempt local adaptation.
-        try:
-            if self.species_exchange is not None:
-                adapted = self.species_exchange.tick(dt=dt, audio=audio)
-                for cand in adapted[: max(0, int(self.population_size))]:
-                    parent = self._snapshot_genome(self.renderer.genome)
-                    before = self._score_current(audio)
-                    self.renderer.genome = cand
-                    self.renderer.evolve_shader()
-                    after = self._score_current(audio)
-                    delta = float(after) - float(before)
-                    decision = self.guardian.approve(
-                        {"score": after, "delta": delta},
-                        parent_score=before,
-                    )
-                    if decision.approved:
-                        self.memory.save_champion(cand, score=after, parent=parent)
-                        if self.identity is not None:
-                            try:
-                                self.identity.record_champion(cand, score=after, parent=parent)
-                            except Exception:
-                                pass
-                    else:
-                        self.renderer.genome = parent
-                        self.renderer.evolve_shader()
-        except Exception:
-            pass
-
-        return dreams_applied
-
-    def _score_current(self, audio: Any, *, concept: Any | None = None) -> float:
-        # Use a monotonically increasing time for the proxy.
-        frame = float(self.renderer.elapsed_time)
-
-        novelty = None
-        if concept is not None and getattr(self.fitness, "concept_archive", None) is not None:
-            try:
-                concept_id = concept.stable_id() if hasattr(concept, "stable_id") else None
-                novelty_res = self.fitness.concept_archive.novelty(concept, concept_id=concept_id)
-                novelty = novelty_res.novelty
-            except Exception:
-                novelty = None
-
-        # Stage 10: renderer GPU cost penalty (proxy).
-        gpu_cost = 0.0
-        try:
-            modules = getattr(self.renderer.genome, "modules", None)
-            passes = None
-            if hasattr(self.renderer, "renderer_genome"):
-                passes = self.renderer.renderer_genome.pipeline.get("passes", None)
-            feedback_resolution = 1.0
-            if hasattr(self.renderer, "renderer_genome"):
-                feedback_resolution = float(self.renderer.renderer_genome.pipeline.get("feedback_resolution", 1.0))
-
-            gpu_cost = float(
-                self.renderer.gpu_profiler.profiler_cost(
-                    modules=modules,
-                    pipeline_passes=passes,
-                    dynamic_feedback_res=feedback_resolution,
-                    cpu_draw_seconds=None,
-                )
-            )
-        except Exception:
-            gpu_cost = 0.0
-
-        base = self.fitness.evaluate(frame=frame, audio=audio, novelty=novelty)
-
-        # Fitness = visual/audio/novelty proxy - gpu_cost penalty.
-        return float(base - 0.25 * gpu_cost)
-
-
-
-    def _snapshot_genome(self, genome: Any) -> Any:
-        # Prefer clone() when the genome supports it (e.g., ModularGenome).
-        if hasattr(genome, "clone") and callable(getattr(genome, "clone")):
-            try:
-                return genome.clone()
-            except Exception:
-                pass
-
-        # Fallback for legacy VisualGenome.
-        g = type(genome)()
-        if hasattr(g, "modules"):
-            g.modules = list(getattr(genome, "modules", []))
-        if hasattr(g, "params"):
-            g.params = dict(getattr(genome, "params", {}))
-        return g
-
-    def _apply_dreams(self, dreams: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        if not dreams or not dreams[0].get("genome"):
-            return []
-        best = dreams[0]
-        genome = best["genome"]
-        score = best.get("score", 0.0)
-        try:
-            if score > 0.5:
-                parent = self._snapshot_genome(self.renderer.genome)
-                self.renderer.genome = genome
-                self.renderer.evolve_shader()
-                if self.identity is not None:
-                    try:
-                        self.identity.record_champion(genome, score=score, parent=parent)
-                    except Exception:
-                        pass
-                return [best]
-        except Exception:
-            pass
-        return []
-
-    def _apply_brain_mutation(self, genome: Any, mutation_id: str) -> None:
-        """Apply mutation_id to the active genome.
-
-        Supports both:
-        - legacy evo_renderer.genome.VisualGenome (modules + params)
-        - ModularGenome (field/warp/palette/post + *_params)
+        Args:
+            population_size: Size of population
+            crossover_rate: Probability of crossover
+            crossover_eta: SBX distribution index
+            mutation_rate: Per-gene mutation probability
+            mutation_eta: Polynomial mutation distribution index
+            elite_fraction: Fraction of population to preserve as elite
+            fitness_sharing_sigma: Sharing radius for fitness sharing
+            fitness_sharing_alpha: Sharing function exponent
+            min_mutation_rate: Minimum adaptive mutation rate
+            max_mutation_rate: Maximum adaptive mutation rate
+            diversity_target: Target diversity level
         """
-        identity = getattr(self, "identity", None)
-        if identity is not None:
-            try:
-                strength = identity.visual_mutation_strength()
-            except Exception:
-                strength = 0.12
-        else:
-            strength = 0.12
+        self.population_size = max(4, population_size)
+        self.crossover_rate = max(0.0, min(1.0, crossover_rate))
+        self.crossover_eta = max(1.0, crossover_eta)
+        self.mutation_rate = max(0.0, min(1.0, mutation_rate))
+        self.mutation_eta = max(1.0, mutation_eta)
+        self.elite_fraction = max(0.0, min(0.5, elite_fraction))
+        self.fitness_sharing_sigma = max(0.01, fitness_sharing_sigma)
+        self.fitness_sharing_alpha = max(0.1, fitness_sharing_alpha)
+        self.min_mutation_rate = max(0.0, min(1.0, min_mutation_rate))
+        self.max_mutation_rate = max(0.0, min(1.0, max_mutation_rate))
+        self.diversity_target = max(0.0, min(1.0, diversity_target))
 
-        is_modular = hasattr(genome, "field") and hasattr(genome, "warp") and hasattr(genome, "post")
+        self.population: list[Genome] = []
+        self.generation = 0
+        self.best_genome: Genome | None = None
+        self.current_mutation_rate = mutation_rate
+        self._objective_names = [
+            "beauty", "novelty", "complexity", "motion", "audio_sync", "stability"
+        ]
 
-        if is_modular:
-            # --- Map mutation IDs into ModularGenome module selections ---
-            if mutation_id == "increase_feedback":
-                # Ensure feedback post exists and bump its parameters if available.
-                if "feedback" not in getattr(genome, "post", []):
-                    genome.post = list(getattr(genome, "post", [])) + ["feedback"]
-                if hasattr(genome, "post_params") and isinstance(genome.post_params, dict):
-                    fp = genome.post_params.get("feedback", {})
-                    if isinstance(fp, dict):
-                        fp_mode = float(fp.get("mode", 0))
-                        fp_speed = float(fp.get("speed", 1.0))
-                        fp_amount = float(fp.get("amount", 0.5))
-                        genome.post_params["feedback"] = {
-                            "mode": int(fp_mode),
-                            "speed": max(0.1, min(3.0, fp_speed + random.uniform(-0.3, 0.3))),
-                            "amount": max(0.0, min(1.0, fp_amount + random.uniform(-0.1, 0.1))),
-                        }
-                genome.mutate(strength=strength)
-
-            elif mutation_id == "change_colour":
-                # Palette selection tweak + parameter mutation handled by genome.mutate()
-                genome.mutate(strength=max(0.05, strength * 0.8))
-
-            elif mutation_id == "add_fractal":
-                # Map to selecting FBM field.
-                genome.field = "fbm"
-                genome.mutate(strength=strength)
-
-            elif mutation_id == "add_particles":
-                # Map to stronger warp variety.
-                genome.warp = random.choice(["vortex", "curl"])
-                genome.mutate(strength=strength)
-
-            elif mutation_id == "add_noise":
-                genome.warp = random.choice(["curl", "twist"])
-                genome.mutate(strength=strength)
-
-            elif mutation_id == "warp_module":
-                genome.warp = random.choice(["curl", "vortex", "twist", "none"])
-                genome.mutate(strength=strength)
-
-            else:
-                genome.mutate(strength=strength)
-
-            # Avoid too many post modules.
-            if hasattr(genome, "post") and isinstance(genome.post, list) and len(genome.post) > 3:
-                genome.post = genome.post[-3:]
-
-            return
-
-        # --- Legacy VisualGenome mutations ---
-        if mutation_id == "increase_feedback":
-            genome.params["feedback"] = max(
+    def initialize(self, base_genes: dict[str, float]) -> None:
+        """Initialize population with base genome."""
+        self.population = []
+        for i in range(self.population_size):
+            genes = base_genes.copy()
+            # Add random variation
+            for key in genes:
+                genes[key] += random.gauss(0, 0.05)
+                genes[key] = max(0.0, min(1.0, genes[key]))
+            self.population.append(Genome(
+                genes,
                 0.0,
-                min(0.99, float(genome.params.get("feedback", 0.85)) + 0.03),
+                lineage=f"init_{i}",
+                generation=0
+            ))
+
+        self.generation = 0
+
+    def evaluate_fitness(self, fitness_fn: Callable[[Genome], dict[str, float]]) -> None:
+        """Evaluate multi-objective fitness of all genomes.
+
+        Args:
+            fitness_fn: Function returning dict of objective name -> value (0-1)
+        """
+        for genome in self.population:
+            genome.objectives = fitness_fn(genome)
+            # Scalar fitness for backward compatibility (weighted sum)
+            weights = {
+                "beauty": 0.40,
+                "novelty": 0.15,
+                "complexity": 0.10,
+                "motion": 0.15,
+                "audio_sync": 0.10,
+                "stability": 0.10,
+            }
+            genome.fitness = sum(
+                genome.objectives.get(k, 0.0) * w for k, w in weights.items()
             )
-            genome.mutate(strength=strength)
 
-        elif mutation_id == "change_colour":
-            for k in ("colour_a", "colour_b", "colour_c"):
-                genome.params[k] = max(
-                    0.0,
-                    min(1.0, float(genome.params.get(k, 0.5)) + random.uniform(-0.25, 0.25)),
-                )
-            genome.mutate(strength=strength * 0.8)
+    def _non_dominated_sort(self, population: list[Genome]) -> list[list[Genome]]:
+        """Fast non-dominated sorting (NSGA-II).
 
-        elif mutation_id == "add_fractal":
-            if random.random() < 0.75:
-                genome.modules.append("fractal")
-            genome.mutate(strength=strength)
+        Returns list of fronts, where front 0 is the Pareto front.
+        """
+        n = len(population)
+        domination_count = [0] * n
+        dominated_sets = [[] for _ in range(n)]
+        fronts = [[]]
 
-        elif mutation_id == "add_particles":
-            if random.random() < 0.75:
-                genome.modules.append("particles")
-            genome.mutate(strength=strength)
+        for i in range(n):
+            for j in range(i + 1, n):
+                rel = self._dominates(population[i], population[j])
+                if rel == 1:
+                    dominated_sets[i].append(j)
+                    domination_count[j] += 1
+                elif rel == -1:
+                    dominated_sets[j].append(i)
+                    domination_count[i] += 1
 
-        elif mutation_id == "add_noise":
-            if random.random() < 0.7:
-                genome.modules.append("noise")
-            genome.mutate(strength=strength)
+        for i in range(n):
+            if domination_count[i] == 0:
+                population[i].rank = 0
+                fronts[0].append(population[i])
 
-        elif mutation_id == "warp_module":
-            if random.random() < 0.7:
-                genome.modules.append("warp")
-            genome.mutate(strength=strength)
+        front_idx = 0
+        while front_idx < len(fronts) and fronts[front_idx]:
+            next_front = []
+            for ind in fronts[front_idx]:
+                idx_i = population.index(ind)
+                for j in dominated_sets[idx_i]:
+                    domination_count[j] -= 1
+                    if domination_count[j] == 0:
+                        population[j].rank = front_idx + 1
+                        next_front.append(population[j])
+            front_idx += 1
+            if next_front:
+                fronts.append(next_front)
 
-        else:
-            genome.mutate(strength=strength)
+        return fronts
 
-        # Avoid runaway module growth
-        if hasattr(genome, "modules") and len(genome.modules) > 6:
-            genome.modules = genome.modules[-6:]
+    def _dominates(self, a: Genome, b: Genome) -> int:
+        """Check if a dominates b.
+        Returns: 1 if a dominates b, -1 if b dominates a, 0 otherwise.
+        """
+        obj_a = a.objectives
+        obj_b = b.objectives
 
-    def _hive_vote(self, *, genome: Any, audio: Any) -> str:
-        """Ask specialized agents for mutation intents and vote for one."""
+        better_in_any = False
+        worse_in_any = False
 
-        intents: list[dict[str, Any]] = []
+        for key in self._objective_names:
+            if key not in obj_a or key not in obj_b:
+                continue
+            if obj_a[key] > obj_b[key]:
+                better_in_any = True
+            elif obj_a[key] < obj_b[key]:
+                worse_in_any = True
 
-        for agent in (self.structure_agent, self.motion_agent, self.colour_agent):
-            intent = agent.suggest(genome, audio)
-            if intent:
-                intents.append(intent)
+        if better_in_any and not worse_in_any:
+            return 1
+        if worse_in_any and not better_in_any:
+            return -1
+        return 0
 
-        # If everyone returns None, fall back to legacy brain.
-        if not intents:
-            return self.brain.choose(audio)
-
-        # Weighted vote by mutation_id.
-        scores: dict[str, float] = {}
-        for intent in intents:
-            mut_id = str(intent.get("mutation_id"))
-            w = float(intent.get("weight", 1.0))
-            scores[mut_id] = scores.get(mut_id, 0.0) + w
-
-        # Pick highest voted mutation id.
-        return max(scores.keys(), key=lambda k: scores[k])
-
-    def _evolve_once(self, audio: Any, dream: bool) -> None:
-        parent = self._snapshot_genome(self.renderer.genome)
-        # Stage 8 (Option 1): use a random concept as novelty carrier.
-        # Later stages will replace this with tree/ConceptDNA evolution.
-        from creativity.concepts import random_concept_dna
-
-        concept = random_concept_dna()
-        before = self._score_current(audio, concept=concept)
-
-        # Stage 12: identity genome bias for explorer vs conservative mode
-        identity = getattr(self, "identity", None)
-        if identity is not None and identity.should_explore_unknown():
-            exploration_mutations = ["add_fractal", "add_particles", "add_noise", "warp_module"]
-            if random.random() < 0.6:
-                mutation_id = random.choice(exploration_mutations)
-            else:
-                mutation_id = self._hive_vote(genome=parent, audio=audio)
-        elif identity is not None and identity.prefer_known_species():
-            safe_mutations = ["increase_feedback", "change_colour", "tune_params"]
-            if random.random() < 0.5:
-                mutation_id = random.choice(safe_mutations)
-            else:
-                mutation_id = self._hive_vote(genome=parent, audio=audio)
-        else:
-            # Stage 7: multi-agent voting for a proposed mutation.
-            mutation_id = self._hive_vote(genome=parent, audio=audio)
-
-        # Stage 11: bias mutation choice with researcher theories.
-        if getattr(self, "researcher", None) is not None:
-            try:
-                recommendation = self.researcher.apply_theory(
-                    audio=audio,
-                    genome_params=dict(getattr(parent, "params", {})),
-                )
-                if recommendation and random.random() < 0.25:
-                    mapping = {
-                        "increase_particle_birth_rate": "add_particles",
-                        "increase_feedback_recursion": "increase_feedback",
-                        "shift_towards_warm": "change_colour",
-                        "increase_complexity": "add_fractal",
-                        "increase_flow": "warp_module",
-                        "increase_disruption": "add_noise",
-                    }
-                    mapped = mapping.get(list(recommendation.values())[0])
-                    if mapped:
-                        mutation_id = mapped
-            except Exception:
-                pass
-
-        child = self._snapshot_genome(parent)
-        self._apply_brain_mutation(child, mutation_id=mutation_id)
-
-        # Evaluate candidate.
-        self.renderer.genome = child
-        self.renderer.evolve_shader()
-        after = self._score_current(audio)
-
-        delta = float(after) - float(before)
-
-        # Guardian approval gate.
-        decision = self.guardian.approve({"score": after, "delta": delta}, parent_score=before)
-        if not decision.approved:
-            # Revert to parent genome to avoid persisting bad visuals.
-            self.renderer.genome = parent
-            self.renderer.evolve_shader()
+    def _crowding_distance(self, front: list[Genome]) -> None:
+        """Calculate crowding distance for a front."""
+        if len(front) <= 2:
+            for ind in front:
+                ind.crowding_distance = float('inf')
             return
 
-        result = MutationResult(
-            mutation=mutation_id,
-            before_score=before,
-            after_score=after,
-        )
-        self.memory.record_mutation(result, audio_state=audio)
+        for ind in front:
+            ind.crowding_distance = 0.0
 
-        # Stage 12: record experience in identity system
-        if identity is not None:
-            try:
-                identity.record_mutation(mutation_id, before, after)
-                # ModularGenome doesn't have `modules`; record post modules instead.
-                if hasattr(child, "modules"):
-                    identity.record_modules(getattr(child, "modules", []), delta)
-                elif hasattr(child, "post"):
-                    identity.record_modules(getattr(child, "post", []), delta)
-            except Exception:
-                pass
+        for obj_name in self._objective_names:
+            # Sort front by this objective
+            front.sort(key=lambda ind: ind.objectives.get(obj_name, 0.0))
 
-        improvement = float(result.delta)
+            # Boundary points get infinite distance
+            front[0].crowding_distance = float('inf')
+            front[-1].crowding_distance = float('inf')
 
-        # Rewards: legacy brain + agent memory.
-        if improvement != 0.0:
-            try:
-                self.brain.reward(mutation_id, improvement)
-            except Exception:
-                pass
+            # Normalize by objective range
+            obj_min = front[0].objectives.get(obj_name, 0.0)
+            obj_max = front[-1].objectives.get(obj_name, 0.0)
+            obj_range = obj_max - obj_min
 
-            # very lightweight agent memory update
-            for agent in (self.structure_agent, self.motion_agent, self.colour_agent):
-                likes = agent.memory.setdefault("likes", {})
-                likes[mutation_id] = float(likes.get(mutation_id, 0.0)) + improvement
+            if obj_range > 1e-6:
+                for i in range(1, len(front) - 1):
+                    prev_val = front[i - 1].objectives.get(obj_name, 0.0)
+                    next_val = front[i + 1].objectives.get(obj_name, 0.0)
+                    front[i].crowding_distance += (next_val - prev_val) / obj_range
 
+    def _fitness_sharing(self, population: list[Genome]) -> None:
+        """Apply fitness sharing to maintain diversity."""
+        n = len(population)
+        if n < 2:
+            return
 
-        # Save champions only if it's good (or during dream mode aggressively)
-        # Record concept novelty carrier for archaeology.
-        try:
-            if getattr(self.fitness, "concept_archive", None) is not None:
-                concept_id = concept.stable_id() if hasattr(concept, "stable_id") else None
-                if concept_id is not None:
-                    self.fitness.concept_archive.record(concept, concept_id=concept_id, score=after)
-        except Exception:
-            pass
+        for i in range(n):
+            niche_count = 0.0
+            for j in range(n):
+                if i == j:
+                    continue
+                dist = population[i].distance(population[j])
+                if dist < self.fitness_sharing_sigma:
+                    sh = 1.0 - (dist / self.fitness_sharing_sigma) ** self.fitness_sharing_alpha
+                    niche_count += sh
 
-        if dream:
-            self.memory.save_champion(child, score=after, parent=parent)
-            if identity is not None:
-                try:
-                    identity.record_champion(child, score=after, parent=parent)
-                except Exception:
-                    pass
+            # Adjust fitness (for selection purposes)
+            population[i].fitness /= (1.0 + niche_count)
+
+    def _calculate_diversity(self, population: list[Genome]) -> float:
+        """Calculate average pairwise distance in population."""
+        n = len(population)
+        if n < 2:
+            return 0.0
+
+        total = 0.0
+        count = 0
+        for i in range(n):
+            for j in range(i + 1, n):
+                total += population[i].distance(population[j])
+                count += 1
+
+        return total / count if count > 0 else 0.0
+
+    def _adapt_mutation_rate(self) -> None:
+        """Adapt mutation rate based on population diversity."""
+        diversity = self._calculate_diversity(self.population)
+
+        if diversity < self.diversity_target * 0.5:
+            # Low diversity - increase mutation
+            self.current_mutation_rate = min(
+                self.max_mutation_rate,
+                self.current_mutation_rate * 1.1
+            )
+        elif diversity > self.diversity_target * 1.5:
+            # High diversity - decrease mutation
+            self.current_mutation_rate = max(
+                self.min_mutation_rate,
+                self.current_mutation_rate * 0.95
+            )
         else:
-            if after > before and after > 1.3:
-                self.memory.save_champion(child, score=after, parent=parent)
-                if identity is not None:
-                    try:
-                        identity.record_champion(child, score=after, parent=parent)
-                    except Exception:
-                        pass
+            # Near target - slow adaptation toward center
+            center = (self.min_mutation_rate + self.max_mutation_rate) / 2.0
+            if self.current_mutation_rate > center:
+                self.current_mutation_rate *= 0.99
+            else:
+                self.current_mutation_rate *= 1.01
 
-        # Stage 9: discover/upload champion as species genetics.
-        try:
-            if self.species_exchange is not None:
-                self.species_exchange.discover_or_upload(
-                    genome=child,
-                    fitness=after,
-                    audio=audio,
-                    mutation_id=mutation_id,
-                )
-        except Exception:
-            pass
+    def evolve(self, mutation_rate: float | None = None) -> None:
+        """Evolve population to next generation using NSGA-II.
 
-        # persist brain occasionally
-        if random.random() < 0.08:
-            try:
-                self.brain.save()
-            except Exception:
-                pass
+        Args:
+            mutation_rate: Optional override for mutation rate
+        """
+        if not self.population:
+            return
+
+        # Use adaptive mutation rate if not overridden
+        mut_rate = mutation_rate if mutation_rate is not None else self.current_mutation_rate
+
+        # Combine current population with offspring for selection
+        # (In standard NSGA-II, we create offspring first, then select from combined pool)
+
+        # Create offspring
+        offspring = []
+        while len(offspring) < self.population_size:
+            # Binary tournament selection on rank + crowding
+            parent1 = self._tournament_select()
+            parent2 = self._tournament_select()
+
+            # Crossover
+            if random.random() < self.crossover_rate:
+                child = parent1.crossover(parent2, self.crossover_rate, self.crossover_eta)
+            else:
+                child = parent1.clone()
+
+            # Mutation
+            child = child.mutate(mut_rate, self.mutation_eta)
+
+            offspring.append(child)
+
+        # Evaluate offspring (will be done by caller in next generation)
+        # For now, just combine and select
+        combined = self.population + offspring
+
+        # Non-dominated sorting
+        fronts = self._non_dominated_sort(combined)
+
+        # Crowding distance for each front
+        for front in fronts:
+            self._crowding_distance(front)
+
+        # Fitness sharing
+        self._fitness_sharing(combined)
+
+        # Select next generation
+        new_population = []
+        for front in fronts:
+            if len(new_population) + len(front) <= self.population_size:
+                new_population.extend(front)
+            else:
+                # Sort front by crowding distance (descending)
+                front.sort(key=lambda ind: ind.crowding_distance, reverse=True)
+                needed = self.population_size - len(new_population)
+                new_population.extend(front[:needed])
+                break
+
+        self.population = new_population
+        self.generation += 1
+
+        # Update best genome (rank 0, highest crowding)
+        front0 = [ind for ind in self.population if ind.rank == 0]
+        if front0:
+            self.best_genome = max(front0, key=lambda ind: ind.crowding_distance)
+        elif self.population:
+            self.best_genome = min(self.population, key=lambda ind: ind.rank)
+
+        # Adapt mutation rate
+        self._adapt_mutation_rate()
+
+    def _tournament_select(self) -> Genome:
+        """Binary tournament selection based on rank and crowding distance."""
+        a = random.choice(self.population)
+        b = random.choice(self.population)
+
+        # Lower rank is better
+        if a.rank != b.rank:
+            return a if a.rank < b.rank else b
+
+        # Same rank: higher crowding distance is better
+        return a if a.crowding_distance > b.crowding_distance else b
+
+    def get_best(self) -> Genome | None:
+        """Get best genome from population."""
+        if self.population:
+            # Prefer rank 0 with highest crowding
+            front0 = [g for g in self.population if g.rank == 0]
+            if front0:
+                return max(front0, key=lambda g: g.crowding_distance)
+            return min(self.population, key=lambda g: g.rank)
+        return None
+
+    def get_pareto_front(self) -> list[Genome]:
+        """Get all non-dominated solutions (rank 0)."""
+        return [g for g in self.population if g.rank == 0]
+
+    def stats(self) -> dict[str, Any]:
+        """Return population statistics."""
+        if not self.population:
+            return {
+                "size": 0,
+                "generation": self.generation,
+                "best_fitness": 0.0,
+            }
+
+        diversity = self._calculate_diversity(self.population)
+        front_sizes = {}
+        for g in self.population:
+            front_sizes[g.rank] = front_sizes.get(g.rank, 0) + 1
+
+        return {
+            "size": len(self.population),
+            "generation": self.generation,
+            "best_fitness": self.best_genome.fitness if self.best_genome else 0.0,
+            "diversity": diversity,
+            "mutation_rate": self.current_mutation_rate,
+            "front_distribution": front_sizes,
+            "pareto_front_size": front_sizes.get(0, 0),
+        }
 
 
+def mutate_ir(block: IRBlock, rate: float = 0.1) -> IRBlock:
+    """Mutate IR block by modifying constants.
 
+    Args:
+        block: SSA IR block
+        rate: Mutation rate
+
+    Returns:
+        Mutated IR block
+    """
+    new_block = block.copy()
+
+    for instr in new_block.instructions:
+        if instr.op == "const" and random.random() < rate:
+            # Mutate constant value
+            value = float(instr.args[0])
+            value += random.gauss(0, 0.1 * abs(value))
+            instr.args[0] = str(value)
+
+    return new_block
+
+
+def score_ir(block: IRBlock, frame_output: bytes) -> float:
+    """Score IR block based on frame output.
+
+    Args:
+        block: SSA IR block
+        frame_output: Rendered frame output
+
+    Returns:
+        Fitness score (0-1)
+    """
+    # In a real implementation, this would analyze:
+    # - Visual complexity
+    # - Color variety
+    # - Motion
+    # - Audio synchronization
+
+    # Placeholder: random score
+    return random.random()

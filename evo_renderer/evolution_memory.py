@@ -6,10 +6,9 @@ import os
 import random
 import sqlite3
 import time
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
-
+from typing import Any
 
 # ============================================================================
 # Data classes
@@ -50,7 +49,7 @@ class MusicSignature:
     mood: str = "calm"
 
     @staticmethod
-    def from_audio(audio: Any) -> "MusicSignature":
+    def from_audio(audio: Any) -> MusicSignature:
         bass = float(getattr(audio, "bass", getattr(audio, "audio", {}).get("bass", 0.0)))
         mid = float(getattr(audio, "mid", getattr(audio, "audio", {}).get("mid", 0.0)))
         treble = float(getattr(audio, "treble", getattr(audio, "audio", {}).get("treb", 0.0)))
@@ -77,7 +76,7 @@ class MusicSignature:
             section=section,
         )
 
-    def feature_vector(self) -> List[float]:
+    def feature_vector(self) -> list[float]:
         return [
             self.bass_profile,
             self.mid_profile,
@@ -93,7 +92,7 @@ class MusicSignature:
             self.dynamic_range,
         ]
 
-    def similarity(self, other: "MusicSignature") -> float:
+    def similarity(self, other: MusicSignature) -> float:
         a = self.feature_vector()
         b = other.feature_vector()
         dot = sum(x * y for x, y in zip(a, b))
@@ -101,11 +100,11 @@ class MusicSignature:
         mag_b = math.sqrt(sum(x * x for x in b)) or 1.0
         return dot / (mag_a * mag_b)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> "MusicSignature":
+    def from_dict(cls, data: dict[str, Any]) -> MusicSignature:
         return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
 
 
@@ -130,11 +129,11 @@ class WorldDNA:
                 new_val = max(0.0, min(1.0, current + delta))
             setattr(self, attr, new_val)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> "WorldDNA":
+    def from_dict(cls, data: dict[str, Any]) -> WorldDNA:
         return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
 
 
@@ -150,8 +149,8 @@ class SpeciesRecord:
     adaptability: float = 0.0
     alive: bool = True
     born_ts: float = field(default_factory=time.time)
-    died_ts: Optional[float] = None
-    music_sig_json: Optional[str] = None
+    died_ts: float | None = None
+    music_sig_json: str | None = None
     cause_of_death: str = "replaced"
 
     def age_seconds(self) -> float:
@@ -163,11 +162,13 @@ class GenomeArchive:
     """Genetic library: champions, extinct species, and mutation history."""
 
     def __init__(self):
-        self.champions: List[Dict[str, Any]] = []
-        self.extinct_species: List[SpeciesRecord] = []
-        self.mutations: List[Dict[str, Any]] = []
+        self.champions: list[dict[str, Any]] = []
+        self.extinct_species: list[SpeciesRecord] = []
+        self.mutations: list[dict[str, Any]] = []
 
-    def add_champion(self, genome: Any, score: float, music_sig: Optional[MusicSignature] = None) -> None:
+    def add_champion(
+        self, genome: Any, score: float, music_sig: MusicSignature | None = None
+    ) -> None:
         entry = {
             "genome": self._serialize(genome),
             "score": float(score),
@@ -186,26 +187,28 @@ class GenomeArchive:
             self.extinct_species = self.extinct_species[-500:]
 
     def record_mutation(self, mutation: str, before: float, after: float, accepted: bool) -> None:
-        self.mutations.append({
-            "mutation": mutation,
-            "before": float(before),
-            "after": float(after),
-            "delta": float(after) - float(before),
-            "accepted": accepted,
-            "ts": time.time(),
-        })
+        self.mutations.append(
+            {
+                "mutation": mutation,
+                "before": float(before),
+                "after": float(after),
+                "delta": float(after) - float(before),
+                "accepted": accepted,
+                "ts": time.time(),
+            }
+        )
         if len(self.mutations) > 2000:
             self.mutations = self.mutations[-2000:]
 
-    def best_champion(self, limit: int = 5) -> List[Dict[str, Any]]:
+    def best_champion(self, limit: int = 5) -> list[dict[str, Any]]:
         return self.champions[:limit]
 
-    def top_extinct(self, limit: int = 10) -> List[SpeciesRecord]:
+    def top_extinct(self, limit: int = 10) -> list[SpeciesRecord]:
         scored = sorted(self.extinct_species, key=lambda r: r.historical_fitness, reverse=True)
         return scored[:limit]
 
     @staticmethod
-    def _serialize(genome: Any) -> Dict[str, Any]:
+    def _serialize(genome: Any) -> dict[str, Any]:
         if hasattr(genome, "to_dict"):
             return genome.to_dict()
         if isinstance(genome, dict):
@@ -232,7 +235,7 @@ class EvolutionMemory:
         self.archive = GenomeArchive()
         self.world_dna = WorldDNA()
         self._session_start = time.time()
-        self._events: List[Dict[str, Any]] = []
+        self._events: list[dict[str, Any]] = []
 
     def _connect(self) -> sqlite3.Connection:
         os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
@@ -375,7 +378,7 @@ class EvolutionMemory:
                         "treble": float(getattr(audio_state, "treble", 0.0)),
                     }
                 )
-            except Exception:
+            except (TypeError, ValueError):
                 audio_json = None
 
         with self._connect() as conn:
@@ -393,7 +396,9 @@ class EvolutionMemory:
                     audio_json,
                 ),
             )
-        self.archive.record_mutation(result.mutation, result.before_score, result.after_score, result.delta > 0)
+        self.archive.record_mutation(
+            result.mutation, result.before_score, result.after_score, result.delta > 0
+        )
         self._event("mutation", result.mutation)
 
     def save_champion(self, genome: Any, score: float, parent: Any | None = None) -> None:
@@ -429,7 +434,7 @@ class EvolutionMemory:
         for ts, score, genome_json in rows:
             try:
                 genome = json.loads(genome_json)
-            except Exception:
+            except json.JSONDecodeError:
                 genome = {"raw": genome_json}
             out.append({"ts": ts, "score": float(score), "genome": genome})
         return out
@@ -461,7 +466,9 @@ class EvolutionMemory:
             )
         self._event("music_pattern", f"section={music_sig.section}")
 
-    def find_similar_music(self, music_sig: MusicSignature, threshold: float = 0.75, limit: int = 5) -> List[Dict[str, Any]]:
+    def find_similar_music(
+        self, music_sig: MusicSignature, threshold: float = 0.75, limit: int = 5
+    ) -> list[dict[str, Any]]:
         with self._connect() as conn:
             rows = conn.execute(
                 """
@@ -476,22 +483,29 @@ class EvolutionMemory:
         for row in rows:
             ts, bass, mid, treble, energy, beat, tempo, section, genome_json, score = row
             stored = MusicSignature(
-                bass_profile=bass, mid_profile=mid, treble_profile=treble,
-                energy=energy, beat=beat, tempo=tempo, section=section,
+                bass_profile=bass,
+                mid_profile=mid,
+                treble_profile=treble,
+                energy=energy,
+                beat=beat,
+                tempo=tempo,
+                section=section,
             )
             sim = music_sig.similarity(stored)
             if sim >= threshold:
                 try:
                     genome = json.loads(genome_json)
-                except Exception:
+                except json.JSONDecodeError:
                     genome = {}
-                matches.append({
-                    "similarity": sim,
-                    "score": float(score),
-                    "section": section,
-                    "genome": genome,
-                    "ts": ts,
-                })
+                matches.append(
+                    {
+                        "similarity": sim,
+                        "score": float(score),
+                        "section": section,
+                        "genome": genome,
+                        "ts": ts,
+                    }
+                )
 
         matches.sort(key=lambda x: x["similarity"], reverse=True)
         return matches[:limit]
@@ -538,7 +552,7 @@ class EvolutionMemory:
         self.archive.record_extinction(rec)
         self._event("species_died", lineage)
 
-    def species_stats(self) -> Dict[str, Any]:
+    def species_stats(self) -> dict[str, Any]:
         with self._connect() as conn:
             row = conn.execute(
                 """
@@ -580,8 +594,9 @@ class EvolutionMemory:
         if row:
             try:
                 self.world_dna = WorldDNA.from_dict(json.loads(row[0]))
-            except Exception:
-                pass
+            except (json.JSONDecodeError, TypeError):
+                logger = __import__("logging").getLogger(__name__)
+                logger.warning(f"Failed to load world DNA: {row[0]!r}")
 
     def evolve_world(self) -> None:
         self.world_dna.mutate(strength=0.05)
@@ -592,7 +607,7 @@ class EvolutionMemory:
     # Timeline
     # ------------------------------------------------------------------
 
-    def timeline(self, limit: int = 100) -> List[Dict[str, Any]]:
+    def timeline(self, limit: int = 100) -> list[dict[str, Any]]:
         with self._connect() as conn:
             rows = conn.execute(
                 """
@@ -621,7 +636,9 @@ class EvolutionMemory:
     # Long-term fitness
     # ------------------------------------------------------------------
 
-    def long_term_fitness(self, lineage_id: str, current_fitness: float, adaptability: float) -> float:
+    def long_term_fitness(
+        self, lineage_id: str, current_fitness: float, adaptability: float
+    ) -> float:
         with self._connect() as conn:
             row = conn.execute(
                 """
@@ -639,17 +656,13 @@ class EvolutionMemory:
         adaptability = max(0.0, min(1.0, float(adaptability)))
         current = max(0.0, min(1.0, float(current_fitness)))
 
-        return (
-            current * 0.5 +
-            historical * 0.3 +
-            adaptability * 0.2
-        )
+        return current * 0.5 + historical * 0.3 + adaptability * 0.2
 
     # ------------------------------------------------------------------
     # Dream mode
     # ------------------------------------------------------------------
 
-    def dream(self, genome_factory, count: int = 3) -> List[Any]:
+    def dream(self, genome_factory, count: int = 3) -> list[Any]:
         """Slowly mutate and explore new forms when audio is quiet."""
         dreams = []
         for _ in range(count):
@@ -663,7 +676,9 @@ class EvolutionMemory:
     # Species revival
     # ------------------------------------------------------------------
 
-    def revive_species(self, music_sig: MusicSignature, threshold: float = 0.75) -> Optional[Dict[str, Any]]:
+    def revive_species(
+        self, music_sig: MusicSignature, threshold: float = 0.75
+    ) -> dict[str, Any] | None:
         matches = self.find_similar_music(music_sig, threshold=threshold, limit=1)
         if matches:
             self._event("revive", f"section={music_sig.section}")
@@ -674,7 +689,7 @@ class EvolutionMemory:
     # Session persistence
     # ------------------------------------------------------------------
 
-    def save(self, path: Union[str, Path]) -> bool:
+    def save(self, path: str | Path) -> bool:
         try:
             data = {
                 "world_dna": self.world_dna.to_dict(),
@@ -689,19 +704,19 @@ class EvolutionMemory:
             self.save_world_dna()
             self._flush_events()
             return True
-        except Exception as e:
+        except (OSError, TypeError, ValueError) as e:
             logger = __import__("logging").getLogger(__name__)
             logger.warning(f"Failed to save ecosystem: {e}")
             return False
 
-    def load(self, path: Union[str, Path]) -> bool:
+    def load(self, path: str | Path) -> bool:
         try:
             data = json.loads(Path(path).read_text())
             if "world_dna" in data:
                 self.world_dna = WorldDNA.from_dict(data["world_dna"])
             self.load_world_dna()
             return True
-        except Exception as e:
+        except (OSError, json.JSONDecodeError, TypeError) as e:
             logger = __import__("logging").getLogger(__name__)
             logger.warning(f"Failed to load ecosystem: {e}")
             return False
@@ -710,7 +725,7 @@ class EvolutionMemory:
     # Helpers
     # ------------------------------------------------------------------
 
-    def _serialize_genome(self, genome: Any) -> Dict[str, Any]:
+    def _serialize_genome(self, genome: Any) -> dict[str, Any]:
         if hasattr(genome, "to_dict"):
             return genome.to_dict()
         if isinstance(genome, dict):
