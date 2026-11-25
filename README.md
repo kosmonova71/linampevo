@@ -1,4 +1,4 @@
-# Projects
+# LinAmp Evo
 
 A mixed Python workspace containing **LinAmp** (a GTK4 music player with an
 evolutionary shader visualizer) and the **EvoRenderer** ecosystem — a large
